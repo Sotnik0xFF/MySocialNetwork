@@ -1,0 +1,115 @@
+﻿.header-nav {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    background-color: white;
+    width: 100%;
+    display: flex;
+}
+
+.header-nav__logo-content {
+    height: 80px;
+}
+
+.header-nav__logo-img {
+}
+
+.header-nav__search {
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.header-nav__item {
+    height: 80px;
+    align-items: center;
+    display: flex;
+}
+
+.header-nav__item_align_right {
+    margin-left: auto;
+}
+
+.header-nav__button {
+    
+}
+
+.signout-button {
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.flat-button {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border: none;
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+.index-page {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.index-page__lcolumn {
+    margin-right: 16px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 400px;
+}
+
+.index-page__rcolumn {
+    width: 320px;
+    min-height: 625px;
+}
+
+.index-page__page-block {
+    margin-bottom: 16px;
+    padding: 32px 24px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, .3);
+}
+
+.login__input {
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .12);
+    padding: 8px 12px;
+    margin-top: 16px;
+}
+
+.login__header {
+    font-weight: bold;
+    text-align: center;
+}
+
+.login__button {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.login__checkbox {
+    margin-top: 16px;
+}
+
+.registration__button {
+    background-color: lawngreen;
+    color: white;
+}
+
+.registration__description {
+    text-align: center;
+    color:gray;
+}
+
+

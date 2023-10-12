@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="index-page">
+    <div class="index-page__lcolumn">
+        <img src="~/img/welcome.png" />
+    </div>
+    <div class="index-page__rcolumn">
+        <div class="index-page__page-block">
+            <partial name="_LoginBlock"></partial>
+        </div>
+        <div class="index-page__page-block">
+            <partial name="_RegistrationBlock" class="index-page__page-block"></partial>
+        </div>
+    </div>
+</div>
