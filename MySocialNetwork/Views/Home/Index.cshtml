@@ -1,17 +1,37 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Identity;
+@using MySocialNetwork.Models.Users;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager;
 
-<div class="index-page">
-    <div class="index-page__lcolumn">
-        <img src="~/img/welcome.png" />
-    </div>
-    <div class="index-page__rcolumn">
-        <div class="index-page__page-block">
-            <partial name="_LoginBlock"></partial>
+@model MySocialNetwork.ViewModels.Account.MainViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    //редирект
+
+}
+else
+{
+
+
+    <div class="row">
+        <div class="side">
+            <div class="center">
+                Пользуйтесь нашей самой крутой соцсетью! Регистрируйтесь всего за 2 минуты, делитесь мыслями, находите новых друзей.
+            </div>
+            <img class="main-img" src="~/img/welcome.png" />
         </div>
-        <div class="index-page__page-block">
-            <partial name="_RegistrationBlock" class="index-page__page-block"></partial>
+
+
+        <div class="main">
+            <partial name="Login" model="@Model.LoginView" />
+            <partial name="Register" model="@Model.RegisterView"/>
         </div>
+
     </div>
-</div>
+
+}
