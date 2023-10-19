@@ -1,24 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MySocialNetwork.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MySocialNetwork.Models.Users;
-using MySocialNetwork.Data.UoW;
+using MySocialNetwork.Data;
 using MySocialNetwork.Data.Repository;
 using MySocialNetwork.Extentions;
-using Microsoft.Extensions.Logging;
-using AutoMapper;
-using Microsoft.AspNetCore.Http;
+using MySocialNetwork.Models.Users;
+using System.Linq;
 
 namespace MySocialNetwork
 {
@@ -51,11 +44,12 @@ namespace MySocialNetwork
                 .AddUnitOfWork()
                     .AddCustomRepository<Message, MessageRepository>()
                     .AddCustomRepository<Friend, FriendsRepository>()
-                .AddIdentity<User, IdentityRole>(opts => {
-                    opts.Password.RequiredLength = 5;   
-                    opts.Password.RequireNonAlphanumeric = false;  
-                    opts.Password.RequireLowercase = false; 
-                    opts.Password.RequireUppercase = false; 
+                .AddIdentity<User, IdentityRole>(opts =>
+                {
+                    opts.Password.RequiredLength = 5;
+                    opts.Password.RequireNonAlphanumeric = false;
+                    opts.Password.RequireLowercase = false;
+                    opts.Password.RequireUppercase = false;
                     opts.Password.RequireDigit = false;
                 })
                     .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -75,7 +69,7 @@ namespace MySocialNetwork
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-              
+
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
